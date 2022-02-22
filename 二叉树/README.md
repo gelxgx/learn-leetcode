@@ -42,6 +42,14 @@ const traverse = root => {
 2. for循环中的递归，在递归前做选择，递归后撤销选择
 
 ##### 2.3.3回溯模板
+这里需要注意：
+如果出现二维数组时，需要提前初始化占位数组
+```javascript
+let board = new Array(n).fill('.').map(()=> new Array(n).fill("."))
+```
+
+使用数组存放数据时，push数据需要进行深拷贝，避免赋值后被影响
+
 ```javascript
 function backtrack (path, list) {
     result = [];
